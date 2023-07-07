@@ -17,4 +17,11 @@ sudo add-apt-repository \
     stable"
 
 sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-ce docker-ce-cli
+
+wget https://github.com/containerd/containerd/releases/download/v1.6.12/containerd-1.6.12-linux-amd64.tar.gz
+tar xvf containerd-1.6.12-linux-amd64.tar.gz
+cd bin
+cp * /usr/bin/
+systemctl start containerd
+systemctl enable containerd
